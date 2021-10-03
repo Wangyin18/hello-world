@@ -1,0 +1,271 @@
+> c<-c(1.9:2.9)
+> c
+[1] 1.9 2.9
+> c<-c("Harry and Meghan","Iran aircrash","Trump impeachment and American politics","Coronavirus","Brexit","Taiwan election","Holocaust day")
+> c<-c("Harry and Meghan","Iran aircrash","Trump impeachment and American politics","Coronavirus","Brexit","Taiwan election","Holocaust day","Thailand attacker")
+> c<-c("Harry and Meghan","Iran aircrash","Trump impeachment and American politics","Coronavirus","Brexit","Taiwan election")
+> v<-c(4,7,11,8,1,1)
+> data.frame (c,v)
+                                        c  v
+1                        Harry and Meghan  4
+2                           Iran aircrash  7
+3 Trump impeachment and American politics 11
+4                             Coronavirus  8
+5                                  Brexit  1
+6                         Taiwan election  1
+> d<-data.frame (c,v)
+> barplot (d)
+Error in barplot.default(d) : 'height' must be a vector or a matrix
+> table(d)
+                                         v
+c                                         1 4 7 8 11
+  Brexit                                  1 0 0 0  0
+  Coronavirus                             0 0 0 1  0
+  Harry and Meghan                        0 1 0 0  0
+  Iran aircrash                           0 0 1 0  0
+  Taiwan election                         1 0 0 0  0
+  Trump impeachment and American politics 0 0 0 0  1
+> d<-data.frame (c,v,row.name="main events")
+> d
+                                        c  v    row.name
+1                        Harry and Meghan  4 main events
+2                           Iran aircrash  7 main events
+3 Trump impeachment and American politics 11 main events
+4                             Coronavirus  8 main events
+5                                  Brexit  1 main events
+6                         Taiwan election  1 main events
+> d<-data.frame (c,v,row.name="c")
+> d
+                                        c  v row.name
+1                        Harry and Meghan  4        c
+2                           Iran aircrash  7        c
+3 Trump impeachment and American politics 11        c
+4                             Coronavirus  8        c
+5                                  Brexit  1        c
+6                         Taiwan election  1        c
+> d<-data.frame (c,v,row.name=c)
+> d
+                                        c  v                                row.name
+1                        Harry and Meghan  4                        Harry and Meghan
+2                           Iran aircrash  7                           Iran aircrash
+3 Trump impeachment and American politics 11 Trump impeachment and American politics
+4                             Coronavirus  8                             Coronavirus
+5                                  Brexit  1                                  Brexit
+6                         Taiwan election  1                         Taiwan election
+> table(d)
+, , row.name = Brexit
+
+                                         v
+c                                         1 4 7 8 11
+  Brexit                                  1 0 0 0  0
+  Coronavirus                             0 0 0 0  0
+  Harry and Meghan                        0 0 0 0  0
+  Iran aircrash                           0 0 0 0  0
+  Taiwan election                         0 0 0 0  0
+  Trump impeachment and American politics 0 0 0 0  0
+
+, , row.name = Coronavirus
+
+                                         v
+c                                         1 4 7 8 11
+  Brexit                                  0 0 0 0  0
+  Coronavirus                             0 0 0 1  0
+  Harry and Meghan                        0 0 0 0  0
+  Iran aircrash                           0 0 0 0  0
+  Taiwan election                         0 0 0 0  0
+  Trump impeachment and American politics 0 0 0 0  0
+
+, , row.name = Harry and Meghan
+
+                                         v
+c                                         1 4 7 8 11
+  Brexit                                  0 0 0 0  0
+  Coronavirus                             0 0 0 0  0
+  Harry and Meghan                        0 1 0 0  0
+  Iran aircrash                           0 0 0 0  0
+  Taiwan election                         0 0 0 0  0
+  Trump impeachment and American politics 0 0 0 0  0
+
+, , row.name = Iran aircrash
+
+                                         v
+c                                         1 4 7 8 11
+  Brexit                                  0 0 0 0  0
+  Coronavirus                             0 0 0 0  0
+  Harry and Meghan                        0 0 0 0  0
+  Iran aircrash                           0 0 1 0  0
+  Taiwan election                         0 0 0 0  0
+  Trump impeachment and American politics 0 0 0 0  0
+
+, , row.name = Taiwan election
+
+                                         v
+c                                         1 4 7 8 11
+  Brexit                                  0 0 0 0  0
+  Coronavirus                             0 0 0 0  0
+  Harry and Meghan                        0 0 0 0  0
+  Iran aircrash                           0 0 0 0  0
+  Taiwan election                         1 0 0 0  0
+  Trump impeachment and American politics 0 0 0 0  0
+
+, , row.name = Trump impeachment and American politics
+
+                                         v
+c                                         1 4 7 8 11
+  Brexit                                  0 0 0 0  0
+  Coronavirus                             0 0 0 0  0
+  Harry and Meghan                        0 0 0 0  0
+  Iran aircrash                           0 0 0 0  0
+  Taiwan election                         0 0 0 0  0
+  Trump impeachment and American politics 0 0 0 0  1
+
+> d
+                                        c  v                                row.name
+1                        Harry and Meghan  4                        Harry and Meghan
+2                           Iran aircrash  7                           Iran aircrash
+3 Trump impeachment and American politics 11 Trump impeachment and American politics
+4                             Coronavirus  8                             Coronavirus
+5                                  Brexit  1                                  Brexit
+6                         Taiwan election  1                         Taiwan election
+> d<-data.frame (c,v)
+> d
+                                        c  v
+1                        Harry and Meghan  4
+2                           Iran aircrash  7
+3 Trump impeachment and American politics 11
+4                             Coronavirus  8
+5                                  Brexit  1
+6                         Taiwan election  1
+> plot(d, main="Simple Bar Plot")
+> barplot (s)
+Error in barplot(s) : object 's' not found
+> barplot (d)
+Error in barplot.default(d) : 'height' must be a vector or a matrix
+> f<- matrix(v, nrow=6, ncol=1, byrow=TRUE, dimnames=list(,c))
+Error in list(, c) : argument 1 is empty
+> f<- matrix(v, nrow=6, ncol=1, byrow=TRUE, dimnames=list(1,c))
+Error in matrix(v, nrow = 6, ncol = 1, byrow = TRUE, dimnames = list(1,  : 
+  length of 'dimnames' [1] not equal to array extent
+> f<- matrix(v, nrow=6, ncol=1, byrow=TRUE, dimnames=list(c,1))
+> f
+                                         1
+Harry and Meghan                         4
+Iran aircrash                            7
+Trump impeachment and American politics 11
+Coronavirus                              8
+Brexit                                   1
+Taiwan election                          1
+> f<- matrix(v, nrow=6, ncol=1, byrow=TRUE, dimnames=list("times",1))
+Error in matrix(v, nrow = 6, ncol = 1, byrow = TRUE, dimnames = list("times",  : 
+  length of 'dimnames' [1] not equal to array extent
+> f<- matrix(v, nrow=6, ncol=1, byrow=TRUE, dimnames=list(6,"times"))
+Error in matrix(v, nrow = 6, ncol = 1, byrow = TRUE, dimnames = list(6,  : 
+  length of 'dimnames' [1] not equal to array extent
+> barplot (f)
+> plot(d, main="Simple Bar Plot", xlab="s", ylab="sd")
+> ?ploy
+No documentation for ‘ploy’ in specified packages and libraries:
+you could try ‘??ploy’
+> ?plot
+starting httpd help server ... done
+> ?table
+> plot(d, main="Simple Bar Plot", xlab="s", ylab="sd")
+> table(d$c)
+
+                                 Brexit                             Coronavirus 
+                                      1                                       1 
+                       Harry and Meghan                           Iran aircrash 
+                                      1                                       1 
+                        Taiwan election Trump impeachment and American politics 
+                                      1                                       1 
+> plot(d, main="Simple Bar Plot", xlab="s", ylab="sd")
+> barplot (d$c)
+Error in barplot.default(d$c) : 'height' must be a vector or a matrix
+> barplot (d$c,d$v)
+Error in barplot.default(d$c, d$v) : 
+  'height' must be a vector or a matrix
+> ggplot (d,aes(x=d$c, y=d$v)+geom_bar(state="identity")+labs(x="main events",y="times"))
+Error in ggplot(d, aes(x = d$c, y = d$v) + geom_bar(state = "identity") +  : 
+  could not find function "ggplot"
+> library (ggplots)
+Error in library(ggplots) : there is no package called ‘ggplots’
+> library (ggplot)
+Error in library(ggplot) : there is no package called ‘ggplot’
+> install.packages (ggplot)
+Error in install.packages(ggplot) : object 'ggplot' not found
+> install.packages (ggplots)
+Error in install.packages(ggplots) : object 'ggplots' not found
+> library (ggplot2)
+> ggplot (d,aes(x=d$c, y=d$v)+geom_bar(state="identity")+labs(x="main events",y="times"))
+Warning: Ignoring unknown parameters: state
+Error in aes(x = d$c, y = d$v) + geom_bar(state = "identity") + labs(x = "main events",  : 
+  non-numeric argument to binary operator
+> f<- matrix(v, nrow=6, ncol=1, byrow=TRUE, dimnames=list(6,"times"))
+Error in matrix(v, nrow = 6, ncol = 1, byrow = TRUE, dimnames = list(6,  : 
+  length of 'dimnames' [1] not equal to array extent
+> f<- matrix(v, nrow=6, ncol=1, byrow=TRUE, dimnames=list(6,1))
+Error in matrix(v, nrow = 6, ncol = 1, byrow = TRUE, dimnames = list(6,  : 
+  length of 'dimnames' [1] not equal to array extent
+> f<- matrix(v, nrow=6, ncol=1, byrow=TRUE, dimnames=list(6,"1"))
+Error in matrix(v, nrow = 6, ncol = 1, byrow = TRUE, dimnames = list(6,  : 
+  length of 'dimnames' [1] not equal to array extent
+> f<- matrix(v, nrow=6, ncol=1, byrow=TRUE, dimnames=list(c, 1))
+> f
+                                         1
+Harry and Meghan                         4
+Iran aircrash                            7
+Trump impeachment and American politics 11
+Coronavirus                              8
+Brexit                                   1
+Taiwan election                          1
+> barplot (f)
+> plot (f)
+> table (f)
+f
+ 1  4  7  8 11 
+ 2  1  1  1  1 
+> plot(d, main="Simple Bar Plot", xlab="s", ylab="sd")
+> d
+                                        c  v
+1                        Harry and Meghan  4
+2                           Iran aircrash  7
+3 Trump impeachment and American politics 11
+4                             Coronavirus  8
+5                                  Brexit  1
+6                         Taiwan election  1
+> plot (d)
+> barplot (d)
+Error in barplot.default(d) : 'height' must be a vector or a matrix
+> plot (d,col="blue")
+> plot (d,col="blue", xlab="main events")
+> plot (d,col="blue", xlab="main events", ylab="times")
+> plot (d,col="blue", xlab="main events", main="The headlines of BBC between 1.9 and 2.9")
+> ?plot
+> plot (d,col="blue", xlab="Main Events (key words)",ylab="Times" main="The headlines of BBC between 1.9 and 2.9")
+Error: unexpected symbol in "plot (d,col="blue", xlab="Main Events (key words)",ylab="Times" main"
+> plot (d,col="blue", xlab="Main Events (key words)",ylab="Times", main="The headlines of BBC between 1.9 and 2.9")
+> plot (d,col="blue", xlab="Main Events (Key Word)",ylab="Times", main="The headlines of BBC between 1.9 and 2.9", sub="specific headline at night (around 9-10 pm), included the day and afternoon headline between 1.9 and 1.12")
+> plot (d,col="blue", xlab="Main Events (Key Word)",ylab="Times", main="The headlines of BBC between 1.9 and 2.9", sub="PS: specific headline at night (around 9-10 pm), included the day and afternoon headline between 1.9 and 1.12")
+> plot (d,col="blue", xlab="Main Events (Key Word)",ylab="Times", main="The Headlines of BBC between 1.9 and 2.9", sub="PS: specific headline at night (around 9-10 pm), included the day and afternoon headline between 1.9 and 1.12")
+> plot (d,col="blue", xlab="Main Events (Key Word)",ylab="Times", main="The Headlines of BBC between 1.9 and 2.9 (2020)", sub="PS: specific headline at night (around 9-10 pm), included the day and afternoon headline between 1.9 and 1.12")
+2020-02-15 22:41:44.936 R[2467:315813] warning: <NSRemoteView: 0x6080003251e0> determined it was necessary to configure <_NSPopoverWindow: 0x7fb440ef0ca0> to support remote view vibrancy
+2020-02-15 22:41:46.435 R[2467:315813] warning: <NSRemoteView: 0x60000013e8c0> determined it was necessary to configure <_NSPopoverWindow: 0x7fb443612470> to support remote view vibrancy
+> plot (d,col="blue", xlab="Main Events (Key Word)",ylab="Times", main="The Headlines of BBC between 1.9 and 2.9 (2020)", sub="PS: Statistics from the specific headline at night (around 9-10 pm), also included the day and afternoon headline between 1.9 and 1.12, and some events were excluded")
+> c
+[1] "Harry and Meghan"                        "Iran aircrash"                          
+[3] "Trump impeachment and American politics" "Coronavirus"                            
+[5] "Brexit"                                  "Taiwan election"                        
+> c<-c("Harry and Meghan","Iran aircrash","American politics","Coronavirus","Brexit","Taiwan election")
+> d<-data.frame (c,v)
+> d
+                  c  v
+1  Harry and Meghan  4
+2     Iran aircrash  7
+3 American politics 11
+4       Coronavirus  8
+5            Brexit  1
+6   Taiwan election  1
+> plot (d,col="blue", xlab="Main Events (Key Word)",ylab="Times", main="The Headlines of BBC between 1.9 and 2.9 (2020)", sub="PS: Statistics from the specific headline at night (around 9-10 pm), also included the day and afternoon headline between 1.9 and 1.12, and some events were excluded")
+> plot (d,col="blue", xlab="Main Events (Key Word)",ylab="Times", main="The Headlines of BBC between 1.9 and 2.9 (2020)-The frequency of a particular event", sub="PS: Statistics from the specific headline at night (around 9-10 pm), also included the day and afternoon headline between 1.9 and 1.12, and some events were excluded")
+> plot (d,col="blue", xlab="Main Events (Key Word)",ylab="Times", main="The Headlines of BBC between 1.9 and 2.9 (2020)-The frequency of the particular event", sub="PS: Statistics from the specific headline at night (around 9-10 pm), also included the day and afternoon headline between 1.9 and 1.12, and some events were excluded")
+> 
